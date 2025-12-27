@@ -8,11 +8,11 @@ services:
       - "./:/usr/share/nginx/html"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.vld-static.rule=Host(`chillsharp.dev`)"
-      - "traefik.http.routers.vld-static.entrypoints=websecure"
-      - "traefik.http.routers.vld-static.tls=true"
-      - "traefik.http.routers.vld-static.tls.certresolver=letsencrypt"
-      - "traefik.http.services.vld-static.loadbalancer.server.port=80"
+      - "traefik.http.routers.chillsharp-static.rule=Host(`chillsharp.dev`)"
+      - "traefik.http.routers.chillsharp-static.entrypoints=websecure"
+      - "traefik.http.routers.chillsharp-static.tls=true"
+      - "traefik.http.routers.chillsharp-static.tls.certresolver=letsencrypt"
+      - "traefik.http.services.chillsharp-static.loadbalancer.server.port=80"
     networks:
       - default
 
