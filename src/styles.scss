@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@import "highlight.js/styles/github-dark.css";
+
+@font-face {
+  font-family: lobster; /* set name */
+  src: url('style/Lobster-Regular.woff2'); /* url of the font */
+}
+
+body {
+  // Reset the user agent margin.
+  background-color: #173e65;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+
+  font-family: Roboto, Arial, Helvetica, sans-serif
+}
+
+p, span, ul, li {
+  color: #eef6ff;
+  font-size: 1.2rem;
+}
+
+a {
+  color: #ffffff;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: lobster;
+}
+
+pre {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-top: 2px solid rgb(198, 223, 255);
+  border-bottom: 2px solid rgb(198, 223, 255);
+  //border-radius: 24px;
+  font-size: 1rem !important;
+}
+
+// .header
+// {
+//   // border: 1px solid black;
+// }
+// .body
+// {
+//   display: flex;
+//   flex-direction: row;
+//   // border: 1px solid black;
+//   .left
+//   {
+//     // border: 1px solid black;
+//   }
+//   .content
+//   {
+//     // border: 1px solid black;
+//   }
+//   .right
+//   {
+//     // border: 1px solid black;
+//   }
+// }
+// .footer
+// {
+//   // border: 1px solid black;
+// }
+

@@ -1,0 +1,72 @@
+.top > div {
+  height: 100%;
+}
+
+div.top
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between title and button */
+  padding: 0 16px;
+  z-index: 1000; /* Ensure it stays on top */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  transition: height 0.2s ease, padding 0.2s ease; /* Smooth transition */
+  overflow: hidden;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  div.top-left
+  {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    //border: 1px solid rgb(255, 0, 0);
+  }
+  div.top-center
+  {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    //border: 1px solid rgb(255, 0, 0);
+  }
+  div.top-right
+  {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    //border: 1px solid rgb(255, 0, 0);
+  }
+
+  // wide viewports
+  @media (min-width: 1280px) {
+
+  }
+
+  // normal viewports
+  @media (max-width: 1280px) {
+
+  }
+
+  // small viewports
+  @media (max-width: 700px) {
+    div.top-left, div.top-right
+    {
+      display: none;
+    }
+    div.top-center
+    {
+      justify-content: left;
+    }
+  }
+}
+
+div.top.scrolled
+{
+  height: 40px; /* Reduced height when scrolled */
+  padding: 0 12px; /* Adjust padding */
+}
