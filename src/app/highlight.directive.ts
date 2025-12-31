@@ -1,5 +1,5 @@
 import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
-import hljs from 'highlight.js';
+import { loadHighlightJs } from './highlight-loader';
 
 @Directive({
   selector: '[appHighlight]'
@@ -9,7 +9,9 @@ export class HighlightDirective implements AfterViewInit {
 
   constructor(private el: ElementRef) {}
 
-  ngAfterViewInit(): void {
+  async ngAfterViewInit(): Promise<void> {
+    
+    const hljs = await loadHighlightJs();
     const codeElement = this.el.nativeElement;
 
     if (this.language) {
