@@ -92,19 +92,19 @@ div.content {
   h1 {
     color: #ffffff;
     text-shadow:
-      3px 3px 0 #000,
-      -3px 3px 0 #000,
-      -3px -3px 0 #000,
-      3px -3px 0 #000;
+      3px 3px 3px #000,
+      -3px 3px 3px #000,
+      -3px -3px 3px #000,
+      3px -3px 3px #000;
   }
 
   h2 {
     color: #000;
     text-shadow:
-      3px 3px 0 #fff,
-      -3px 3px 0 #fff,
-      -3px -3px 0 #fff,
-      3px -3px 0 #fff;
+      2px 2px 2px #fff,
+      -2px 2px 2px #fff,
+      -2px -2px 2px #fff,
+      2px -2px 2px #fff;
   }
 
   .content-box {
