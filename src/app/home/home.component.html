@@ -18,13 +18,15 @@
 
   </div>
   <div content class="content">
-    <div class="content-title">
-      <h1>Simplifying Enterprise Data Management and API Development</h1>
+    <div class="content-box">
+      <div class="content-title">
+        <h1>Simplifying Enterprise Data Management and API Development</h1>
+      </div>
+      <p>ChillSharp is a lightweight .NET library that sits on top of Entity Framework Core and turns an existing data model into a fully working REST API with almost no setup.</p>
+      <p>Instead of writing controllers, services, and endless DTO mappings, ChillSharp exposes your entities through a clean, DTO-based API layer that supports querying, creation, updates, and deletion out of the box.</p>
+      <p>You bring the DbContext. ChillSharp does the boring parts.</p>
+      <h2>How to build your API server in minutes</h2>
     </div>
-    <p>ChillSharp is a lightweight .NET library that sits on top of Entity Framework Core and turns an existing data model into a fully working REST API with almost no setup.</p>
-    <p>Instead of writing controllers, services, and endless DTO mappings, ChillSharp exposes your entities through a clean, DTO-based API layer that supports querying, creation, updates, and deletion out of the box.</p>
-    <p>You bring the DbContext. ChillSharp does the boring parts.</p>
-    <h2>How to build your API server in minutes</h2>
     <pre>
       <code appHighlight language="csharp">
 using ChillSharp;
@@ -48,38 +50,44 @@ app.MapChillApi();
 app.Run();
       </code>
     </pre>
+    
+    <div class="content-box">
+      <h2>✅ How It Works</h2>
+      <ul>
+        <li><strong>Existing DbContext</strong><br/>
+        ChillSharp uses your already-configured EF Core DbContext. No model duplication.</li>
+        <li><strong>Plug-and-Play API</strong><br/>
+        AddChillApi&lt;TContext&gt;() registers everything needed to expose your data safely and consistently.</li>
+        <li><strong>Automatic Endpoints</strong><br/>
+        MapChillApi() generates REST endpoints for querying, creating, updating, and deleting entities.</li>
+        <li><strong>DTO-First by Default</strong><br/>
+        Entities are exposed as ChillDtoEntity, giving you web-friendly JSON without leaking EF internals.</li>
+      </ul>
 
-    <h2>✅ How It Works</h2>
-    <ul>
-      <li><strong>Existing DbContext</strong><br/>
-      ChillSharp uses your already-configured EF Core DbContext. No model duplication.</li>
-      <li><strong>Plug-and-Play API</strong><br/>
-      AddChillApi&lt;TContext&gt;() registers everything needed to expose your data safely and consistently.</li>
-      <li><strong>Automatic Endpoints</strong><br/>
-      MapChillApi() generates REST endpoints for querying, creating, updating, and deleting entities.</li>
-      <li><strong>DTO-First by Default</strong><br/>
-      Entities are exposed as ChillDtoEntity, giving you web-friendly JSON without leaking EF internals.</li>
-    </ul>
+      <h2>🚀 What you get</h2>
+      <p>Within less than 10 lines, your database is instantly available through REST endpoints:</p>
+      <ul>
+        <li><strong>POST /api/chill/query</strong><br/>
+          Execute dynamic queries</li>
+        <li><strong>POST /api/chill/create</strong><br/>
+          Create a new entity</li>
+        <li><strong>POST /api/chill/update</strong><br/>
+          Update an entity</li>
+        <li><strong>POST /api/chill/delete</strong><br/>
+          Delete an entity</li>
+        <li><strong>POST /api/chill/chunk</strong><br/>
+          Executes a chunk of operations in a transaction</li>
+      </ul>
+      <p>All without writing a single controller. Just plug your DbContext and go.</p>
 
-    <h2>🚀 What you get</h2>
-    <p>Within less than 10 lines, your database is instantly available through REST endpoints:</p>
-    <ul>
-      <li>POST /api/chill/query → Execute dynamic queries</li>
-      <li>POST /api/chill/find → Find an entity by GUID</li>
-      <li>POST /api/chill/create → Create a new entity</li>
-      <li>POST /api/chill/update → Update an entity</li>
-      <li>POST /api/chill/delete → Delete an entity</li>
-    </ul>
-    <p>All without writing a single controller. Just plug your DbContext and go.</p>
-
-    <h2>😎 Why ChillSharp</h2>
-    <ul>
-      <li>Minimal setup</li>
-      <li>Zero repetitive boilerplate</li>
-      <li>EF Core-friendly</li>
-      <li>DTO-based and API-ready</li>
-    </ul>
-
+      <h2>😎 Why ChillSharp</h2>
+      <ul>
+        <li>Minimal setup</li>
+        <li>Zero repetitive boilerplate</li>
+        <li>EF Core-friendly</li>
+        <li>DTO-based and API-ready</li>
+      </ul>
+    </div>
   </div>
   <div right>
     
