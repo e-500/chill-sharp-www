@@ -4,6 +4,7 @@ div.container {
   align-items: center;
   /*margin-bottom: 1rem;*/
   padding-top: 40px;
+  margin-bottom: 80px;
   div.header {
     padding-top: 20px;
     width: 100%;
@@ -25,11 +26,6 @@ div.container {
   }
   div.right {
     margin: auto;
-  }
-  div.footer {
-    background-color: black;
-    width: 100%;
-    min-height: 25vh;
   }
 
   // wide viewports

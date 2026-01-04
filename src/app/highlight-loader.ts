@@ -7,6 +7,8 @@ export function loadHighlightJs(): Promise<HLJSApi> {
     hljsPromise = (async () => {
       const hljs = (await import('highlight.js/lib/core')).default;
 
+      const { default: xml } =
+        await import('highlight.js/lib/languages/xml');
       const { default: csharp } =
         await import('highlight.js/lib/languages/csharp');
       const { default: typescript } =
@@ -14,6 +16,7 @@ export function loadHighlightJs(): Promise<HLJSApi> {
       const { default: javascript } =
         await import('highlight.js/lib/languages/javascript');
 
+      hljs.registerLanguage('xml', xml);
       hljs.registerLanguage('csharp', csharp);
       hljs.registerLanguage('typescript', typescript);
       hljs.registerLanguage('javascript', javascript);

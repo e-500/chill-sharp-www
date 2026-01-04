@@ -1,0 +1,106 @@
+<app-top-bar>
+    <div top-left class="top-bar">
+      <h2 style="white-space: nowrap;"><a routerLink="/">🏠 Home</a></h2>
+    </div>
+    <div top-center class="top-bar">
+        <img src="logo.png" style="display: inline-block;"/>
+        <h1 style="white-space: nowrap; display: inline-block;">ChillSharp</h1>
+    </div>
+    <div top-right class="top-bar">
+      <h2 style="white-space: nowrap;"><a href="https://github.com/e-500/chill-sharp/releases">💾 Download</a></h2>
+    </div>
+</app-top-bar>
+<app-container>
+  <ng-content header class="header">
+    <img src="header.png" />
+  </ng-content>
+  <div left>
+
+  </div>
+  <div content class="content">
+    <div class="content-box">
+      <div class="content-title">
+        <h1>HowTo - Basic setup</h1>
+      </div>
+      <p>This guide walks you through the creation of a basic API service using ChillSharp on ASP.NET Core with Entity Framework Core. By the end, you will have a running API service and a clear understanding of how ChillSharp is wired into the application lifecycle.</p>
+      <p>👉 If you want to save time and you do not care about the learning process (no judgment), you can download the full working example directly from the: <a href="https://github.com/e-500/chill-sharp/tree/main/ChillSharp.Examples/BasicApiService">Related GitHub page</a>.</p>
+      <p>If you prefer to understand what is happening under the hood, continue reading and follow the tutorial step by step.</p>
+      
+      <h2>What You Are Building</h2>
+      <p>You will create:</p>
+      <ul>
+        <li>A new ASP.NET Core API service</li>
+        <li>A minimal EF Core DbContext</li>
+        <li>A ChillSharp API endpoint exposed by the service</li>
+      </ul>
+      <p>This example is intentionally simple and focuses only on setup and wiring. Business logic and database entities are left out on purpose.</p>
+
+      <h2>Prerequisites:</h2>
+      <p>Before starting, make sure you have:</p>
+      <ul>
+        <li>Visual Studio (or another .NET IDE)</li>
+        <li>.NET 8 SDK installed</li>
+        <li>Basic familiarity with ASP.NET Core and C#</li>
+      </ul>
+      <p>You must also know how to:</p>
+      <p><a routerLink="/how-to-install-nuget-package">How to setup ChillSharp NuGet package in Visual Studio</a></p>
+
+      <p>Required packages:</p>
+      <ul>
+        <li>ChillSharp</li>
+        <li>ChillSharp.Client</li>
+        <li>Microsoft.EntityFrameworkCore</li>
+      </ul>
+
+      <h2>Create the Project</h2>
+      <p>Create a new ASP.NET Core console or web project.<br/>This example uses a Web SDK even though the application is lightweight.</p>
+    </div>
+    <pre>
+      <code 
+        appHighlight 
+        language="xml" 
+        fileUrl="https://raw.githubusercontent.com/e-500/chill-sharp/refs/heads/main/ChillSharp.Examples/BasicApiService/ChillSharp.Examples.BasicApiService.csproj">
+      </code>
+    </pre>
+    <div class="content-box">
+
+      <p>Notes:</p>
+      <ul>
+        <li>Microsoft.NET.Sdk.Web enables hosting and routing</li>
+        <li>EF Core is included even though this example uses a dummy context</li>
+      </ul>
+
+      <h2>Edit Program.cs</h2>
+      <p>All configuration for this demo lives in Program.cs.</p>
+
+      <p>What This File Does:</p>
+      <ul>
+        <li>Defines a minimal EF Core database context</li>
+        <li>Registers ChillSharp services</li>
+        <li>Starts a web server (forcing use of 5000 HTTPS port)</li>
+        <li>Maps ChillSharp API endpoints</li>
+      </ul>
+
+    </div>
+  
+    <pre>
+      <code appHighlight language="csharp" fileUrl="https://raw.githubusercontent.com/e-500/chill-sharp/refs/heads/main/ChillSharp.Examples/BasicApiService/Program.cs"></code>
+    </pre>
+
+    
+    <div class="content-box">
+  
+      <h2>Testing the Service</h2>
+      <p>The example does not expose any real functionality because the database context is empty.
+        However, you can verify that the service is running by calling the built-in test endpoint:</p>
+      <p><a target="_blank" href="https://localhost:5000/api/chill/test">https://localhost:5000/api/chill/test</a></p>
+    </div>
+
+  </div>
+  <div right>
+    
+  </div>
+</app-container>
+<app-footer>
+  
+</app-footer>

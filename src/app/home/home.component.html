@@ -1,19 +1,19 @@
 <app-top-bar>
-    <div top-left class="logo">
-      <h2 style="white-space: nowrap;"><a href="https://github.com/e-500/chill-sharp/tree/main/ChillSharp.Examples">🚀 Examples</a></h2>
+    <div top-left class="top-bar">
+      <h2 style="white-space: nowrap;"><a routerLink="/how-to">🚀 How-to</a></h2>
     </div>
-    <div top-center class="logo">
+    <div top-center class="top-bar">
         <img src="logo.png" style="display: inline-block;"/>
         <h1 style="white-space: nowrap; display: inline-block;">ChillSharp</h1>
     </div>
-    <div top-right class="logo">
+    <div top-right class="top-bar">
       <h2 style="white-space: nowrap;"><a href="https://github.com/e-500/chill-sharp/releases">💾 Download</a></h2>
     </div>
 </app-top-bar>
 <app-container>
-  <div header class="header">
+  <ng-content header class="header">
     <img src="header.png" />
-  </div>
+  </ng-content>
   <div left>
 
   </div>
@@ -28,26 +28,10 @@
       <h2>How to build your API server in minutes</h2>
     </div>
     <pre>
-      <code appHighlight language="csharp">
-using ChillSharp;
-using ChillSharp.Dto;
-using Microsoft.EntityFrameworkCore;
-
-var builder = WebApplication.CreateBuilder(args);
-
-// Assume you already have your DbContext (e.g., AppDbContext) configured
-builder.Services.AddDbContext&lt;AppDbContext&gt;(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// Add ChillSharp API using your existing DbContext
-builder.Services.AddChillApi&lt;AppDbContext&gt;();
-
-var app = builder.Build();
-
-// Map ChillSharp API endpoints automatically
-app.MapChillApi();
-
-app.Run();
+      <code 
+        appHighlight 
+        language="csharp" 
+        fileUrl="https://raw.githubusercontent.com/e-500/chill-sharp/refs/heads/main/ChillSharp.Examples/CodeSnippets/HomePageTeaser.cs">
       </code>
     </pre>
     
@@ -115,38 +99,8 @@ app.Run();
   <div right>
     
   </div>
-  <div footer class="footer">
-    <div style="width: 33%;">
-      <h1>Resources:</h1>
-      <p style="font-size: 1.2rem;">🔗 <a style="font-size: 1.2rem;" href="https://github.com/e-500/chill-sharp">GitHub repository</a></p>
-      <p style="font-size: 1.2rem;">🐞 <a style="font-size: 1.2rem;" href="https://github.com/e-500/chill-sharp/issues">Issues and bug reports</a></p>
-    </div>
-    <div style="width: 66%;">
-      <h1>Disclaimer</h1>
-      <table style="vertical-align: top;">
-        <tr>
-          <td><p style="font-size: 1.2rem; margin-top: -0.45rem;">👉</p></td>
-          <td><p style="font-size: 0.7rem;">ChillSharp is an open source tool released under the GNU Affero General Public License v3 (AGPLv3).<br/>
-            It is provided as-is, without warranties or guaranteed support.<br/>
-            Users are encouraged to review, test, and evaluate the software to ensure it meets their needs.<br/>
-            If you choose to use ChillSharp in a production environment, please do so only after performing appropriate testing and validation.<br/>
-            The author does not assume responsibility for issues arising from its use.</p>
-          </td>
-        </tr>
-        <tr>
-          <td><p style="font-size: 1.2rem; margin-top: -0.45rem;">👉</p></td>
-          <td><p style="font-size: 0.7rem;">If you need LGPL licensed version for your SaaS application, please contact us and describe your project.<br/>
-            We are happy to support you!</p></td>
-        </tr>
-        <tr>
-          <td><p style="font-size: 1.2rem; margin-top: -0.1rem;">🍪</p></td>
-          <td><p style="font-size: 1.2rem;">We do not collect any cookie</p></td>
-        </tr>
-      </table>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
-    </div>
-  </div>
+
 </app-container>
+<app-footer>
+
+</app-footer>
