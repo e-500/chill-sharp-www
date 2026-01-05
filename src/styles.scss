@@ -61,7 +61,8 @@ pre {
   align-items: center;   /* vertical alignment */
   gap: 6px;             /* space between image and title */
   white-space: nowrap;   /* prevents wrapping */
-  > img {
+
+  img {
     margin-top: -4px;
     height: 2.9rem;
     object-fit: cover;
@@ -118,6 +119,8 @@ div.content {
       -3px 3px 3px #000,
       -3px -3px 3px #000,
       3px -3px 3px #000;
+
+    font-size: 2.5rem;
   }
 
   h2 {
@@ -127,6 +130,8 @@ div.content {
       -2px 2px 2px #fff,
       -2px -2px 2px #fff,
       2px -2px 2px #fff;
+
+    font-size: 2rem;
   }
 
   .content-box {

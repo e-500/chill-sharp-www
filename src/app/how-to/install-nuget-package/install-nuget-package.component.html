@@ -2,12 +2,12 @@
     <div top-left class="top-bar">
       <h2 style="white-space: nowrap;"><a routerLink="/">🏠 Home</a></h2>
     </div>
-    <div top-center class="top-bar">
+    <!-- <div top-center class="top-bar">
         <img src="logo.png" style="display: inline-block;"/>
         <h1 style="white-space: nowrap; display: inline-block;">ChillSharp</h1>
-    </div>
+    </div> -->
     <div top-right class="top-bar">
-      <h2 style="white-space: nowrap;"><a href="https://github.com/e-500/chill-sharp/releases">💾 Download</a></h2>
+      <h2 style="white-space: nowrap;"><a target="_blank" href="https://github.com/e-500/chill-sharp/releases">💾 Download</a></h2>
     </div>
 </app-top-bar>
 <app-container>
@@ -20,7 +20,7 @@
   <div content class="content">
     <div class="content-box">
       <div class="content-title">
-        <h1>HowTo - Install NuGet package in Visual Studio</h1>
+        <h1>HowTo, Install NuGet package in Visual Studio</h1>
       </div>
       <p>This tutorial explains how to manually install the ChillSharp NuGet package in Visual Studio by downloading it from GitHub and binding a local NuGet package source.</p>
       
@@ -31,7 +31,7 @@
         <li>Yes, this is the part where open source quietly cries in the corner.</li>
       </ul>
 
-      <h2>Overview of the Process</h2>
+      <h2>✈️ Overview of the Process</h2>
       <p>What you are about to do</p>
       <ul>
         <li>Download the ChillSharp NuGet package from GitHub;</li>
@@ -41,17 +41,17 @@
       </ul>
       <p>Once configured, Visual Studio will treat your local folder exactly like an official NuGet feed.</p>
 
-      <h2>Step 1 - Download ChillSharp from GitHub</h2>
-      <p>Go to the ChillSharp GitHub repository and <a href="https://github.com/e-500/chill-sharp/releases/tag/dev">download the NuGet package manually</a>.</p>
+      <h2>💾 Step 1 Download ChillSharp from GitHub</h2>
+      <p>Go to the ChillSharp GitHub repository and <a target="_blank" href="https://github.com/e-500/chill-sharp/releases/tag/dev">Download the NuGet package manually</a>.</p>
 
-      <h2>Step 2 - Create a Local NuGet Folder</h2>
+      <h2>📂 Step 2 Create a Local NuGet Folder</h2>
       <ul>
         <li>Create a dedicated folder on your machine for local NuGet packages:<br/>For example: C:\NuGet\LocalPackages</li>
         <li>Then copy the downloaded ChillSharp.x.y.z.nupkg file into this folder.</li>
       </ul>
       <p><i>You can store multiple packages here if you want. Visual Studio does not care. It will index everything.</i></p>
 
-      <h2>Step 3 - Register the Local NuGet Source in Visual Studio</h2>
+      <h2>✏️ Step 3 Register the Local NuGet Source in Visual Studio</h2>
       <p>Now you need to tell Visual Studio that this folder exists and should be treated as a NuGet feed.</p>
       <p>Open NuGet Package Source Settings:</p>
       <ul>
@@ -67,7 +67,7 @@
       </ul>
       <p>Congratulations. You have successfully taught Visual Studio where files live on your own computer.</p>
 
-      <h2>Step 4 - Install the NuGet Package</h2>
+      <h2>🪛 Step 4 Install the NuGet Package</h2>
       <p>Now comes the familiar part.</p>
       <img src="header-nuget.png" />
       <p>Open the NuGet Package Manager</p>
@@ -84,6 +84,9 @@
         <li>Accept the license agreement if prompted</li>
       </ul>
       <p>Visual Studio will now reference the package exactly as if it were installed from nuget.org.</p>
+
+      <p style="text-align: center;">✅</p>
+      
     </div>
   </div>
   <div right>

@@ -2,12 +2,12 @@
     <div top-left class="top-bar">
       <h2 style="white-space: nowrap;"><a routerLink="/">🏠 Home</a></h2>
     </div>
-    <div top-center class="top-bar">
+    <!-- <div top-center class="top-bar">
         <img src="logo.png" style="display: inline-block;"/>
         <h1 style="white-space: nowrap; display: inline-block;">ChillSharp</h1>
-    </div>
+    </div> -->
     <div top-right class="top-bar">
-      <h2 style="white-space: nowrap;"><a href="https://github.com/e-500/chill-sharp/releases">💾 Download</a></h2>
+      <h2 style="white-space: nowrap;"><a target="_blank" href="https://github.com/e-500/chill-sharp/releases">💾 Download</a></h2>
     </div>
 </app-top-bar>
 <app-container>
@@ -20,13 +20,13 @@
   <div content class="content">
     <div class="content-box">
       <div class="content-title">
-        <h1>HowTo - Basic setup</h1>
+        <h1>HowTo, Basic setup</h1>
       </div>
       <p>This guide walks you through the creation of a basic API service using ChillSharp on ASP.NET Core with Entity Framework Core. By the end, you will have a running API service and a clear understanding of how ChillSharp is wired into the application lifecycle.</p>
-      <p>👉 If you want to save time and you do not care about the learning process (no judgment), you can download the full working example directly from the: <a href="https://github.com/e-500/chill-sharp/tree/main/ChillSharp.Examples/BasicApiService">Related GitHub page</a>.</p>
+      <p>👉 If you want to save time and you do not care about the learning process (no judgment), you can download the full working example directly from the: <a target="_blank" href="https://github.com/e-500/chill-sharp/tree/main/ChillSharp.Examples/BasicApiService">Related GitHub page</a>.</p>
       <p>If you prefer to understand what is happening under the hood, continue reading and follow the tutorial step by step.</p>
       
-      <h2>What You Are Building</h2>
+      <h2>🏗️ What You Are Building</h2>
       <p>You will create:</p>
       <ul>
         <li>A new ASP.NET Core API service</li>
@@ -35,7 +35,7 @@
       </ul>
       <p>This example is intentionally simple and focuses only on setup and wiring. Business logic and database entities are left out on purpose.</p>
 
-      <h2>Prerequisites:</h2>
+      <h2>🔎 Prerequisites</h2>
       <p>Before starting, make sure you have:</p>
       <ul>
         <li>Visual Studio (or another .NET IDE)</li>
@@ -52,7 +52,7 @@
         <li>Microsoft.EntityFrameworkCore</li>
       </ul>
 
-      <h2>Create the Project</h2>
+      <h2>🚀 Create the Project</h2>
       <p>Create a new ASP.NET Core console or web project.<br/>This example uses a Web SDK even though the application is lightweight.</p>
     </div>
     <pre>
@@ -70,7 +70,7 @@
         <li>EF Core is included even though this example uses a dummy context</li>
       </ul>
 
-      <h2>Edit Program.cs</h2>
+      <h2>✏️ Edit Program.cs</h2>
       <p>All configuration for this demo lives in Program.cs.</p>
 
       <p>What This File Does:</p>
@@ -90,10 +90,13 @@
     
     <div class="content-box">
   
-      <h2>Testing the Service</h2>
+      <h2>🧪 Testing the Service</h2>
       <p>The example does not expose any real functionality because the database context is empty.
         However, you can verify that the service is running by calling the built-in test endpoint:</p>
       <p><a target="_blank" href="https://localhost:5000/api/chill/test">https://localhost:5000/api/chill/test</a></p>
+
+      <p style="text-align: center;">✅</p>
+
     </div>
 
   </div>

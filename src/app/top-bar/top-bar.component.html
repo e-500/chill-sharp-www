@@ -1,5 +1,11 @@
 <div class="top" [class.scrolled]="isScrolled">
   <div class="top-left"><ng-content select="[top-left]"></ng-content></div>
-  <div class="top-center"><ng-content select="[top-center]"></ng-content></div>
+  <div class="top-center">
+    <ng-content select="[top-center]">
+      <div class="top-bar">
+        <img src="logo.png" style="display: inline-block;"/>
+        <h1 style="white-space: nowrap; display: inline-block;"><a routerLink="/">ChillSharp</a></h1>
+      </div>
+    </ng-content></div>
   <div class="top-right"><ng-content select="[top-right]"></ng-content></div>
 </div>
