@@ -17,16 +17,16 @@
   <div left>
 
   </div>
-  <div content class="content">
-    <div class="content-box">
-      <div class="content-title">
-        <h1>Simplifying Enterprise Data Management and API Development</h1>
-      </div>
-      <p>ChillSharp is a lightweight .NET library that sits on top of Entity Framework Core and turns an existing data model into a fully working REST API with almost no setup.</p>
-      <p>Instead of writing controllers, services, and endless DTO mappings, ChillSharp exposes your entities through a clean, DTO-based API layer that supports querying, creation, updates, and deletion out of the box.</p>
-      <p>You bring the DbContext. ChillSharp does the boring parts.</p>
-      <h2>How to build your API server in minutes</h2>
-    </div>
+  <ng-content content>
+
+    <h1>Simplifying Enterprise Data Management and API Development</h1>
+
+    <p>ChillSharp is a lightweight .NET library that sits on top of Entity Framework Core and turns an existing data model into a fully working REST API with almost no setup.</p>
+    <p>Instead of writing controllers, services, and endless DTO mappings, ChillSharp exposes your entities through a clean, DTO-based API layer that supports querying, creation, updates, and deletion out of the box.</p>
+    <p>You bring the DbContext. ChillSharp does the boring parts.</p>
+
+    <h2>How to build your API server in minutes</h2>
+
     <pre>
       <code 
         appHighlight 
@@ -34,72 +34,70 @@
         fileUrl="https://raw.githubusercontent.com/e-500/chill-sharp/refs/heads/main/ChillSharp.Examples/CodeSnippets/HomePageTeaser.cs">
       </code>
     </pre>
-    
-    <div class="content-box">
-      <h2>✅ How It Works</h2>
-      <ul>
-        <li><strong>Existing DbContext</strong><br/>
-        ChillSharp uses your already-configured EF Core DbContext. No model duplication.</li>
-        <li><strong>Plug-and-Play API</strong><br/>
-        AddChillApi&lt;TContext&gt;() registers everything needed to expose your data safely and consistently.</li>
-        <li><strong>Automatic Endpoints</strong><br/>
-        MapChillApi() generates REST endpoints for querying, creating, updating, and deleting entities.</li>
-        <li><strong>DTO-First by Default</strong><br/>
-        Entities are exposed as ChillDtoEntity, giving you web-friendly JSON without leaking EF internals.</li>
-      </ul>
+  
+    <h2>✅ How It Works</h2>
+    <ul>
+      <li><strong>Existing DbContext</strong><br/>
+      ChillSharp uses your already-configured EF Core DbContext. No model duplication.</li>
+      <li><strong>Plug-and-Play API</strong><br/>
+      AddChillApi&lt;TContext&gt;() registers everything needed to expose your data safely and consistently.</li>
+      <li><strong>Automatic Endpoints</strong><br/>
+      MapChillApi() generates REST endpoints for querying, creating, updating, and deleting entities.</li>
+      <li><strong>DTO-First by Default</strong><br/>
+      Entities are exposed as ChillDtoEntity, giving you web-friendly JSON without leaking EF internals.</li>
+    </ul>
 
-      <h2>🚀 What you get</h2>
-      <p>Within less than 10 lines, your database is instantly available through REST endpoints:</p>
-      <ul>
-        <li><strong>POST /api/chill/query</strong><br/>
-          Execute dynamic queries</li>
-        <li><strong>POST /api/chill/create</strong><br/>
-          Create a new entity</li>
-        <li><strong>POST /api/chill/update</strong><br/>
-          Update an entity</li>
-        <li><strong>POST /api/chill/delete</strong><br/>
-          Delete an entity</li>
-        <li><strong>POST /api/chill/chunk</strong><br/>
-          Executes a chunk of operations in a transaction</li>
-      </ul>
-      <p>All without writing a single controller. Just plug your DbContext and go.</p>
+    <h2>🚀 What you get</h2>
+    <p>Within less than 10 lines, your database is instantly available through REST endpoints:</p>
+    <ul>
+      <li><strong>POST /api/chill/query</strong><br/>
+        Execute dynamic queries</li>
+      <li><strong>POST /api/chill/create</strong><br/>
+        Create a new entity</li>
+      <li><strong>POST /api/chill/update</strong><br/>
+        Update an entity</li>
+      <li><strong>POST /api/chill/delete</strong><br/>
+        Delete an entity</li>
+      <li><strong>POST /api/chill/chunk</strong><br/>
+        Executes a chunk of operations in a transaction</li>
+    </ul>
+    <p>All without writing a single controller. Just plug your DbContext and go.</p>
 
-      <h2>😎 Why ChillSharp</h2>
-      <ul>
-        <li>Minimal setup</li>
-        <li>Zero repetitive boilerplate</li>
-        <li>EF Core-friendly</li>
-        <li>DTO-based and API-ready</li>
-      </ul>
+    <h2>😎 Why ChillSharp</h2>
+    <ul>
+      <li>Minimal setup</li>
+      <li>Zero repetitive boilerplate</li>
+      <li>EF Core-friendly</li>
+      <li>DTO-based and API-ready</li>
+    </ul>
 
-      <h2>🗝️ Key Features:</h2>
-      <ul>
-        <li>DTO-First Design: Work with simple, serializable DTOs instead of complex EF Core entities, making it ideal for REST APIs, microservices, and front-end applications.</li>
-        <li>Dynamic Queries: Easily build and execute flexible queries using ChillSharp’s query objects, supporting filtering, sorting, and pagination with minimal boilerplate.</li>
-        <li>Entity Lifecycle Management: Automaes entity lifecycle events (create, update, delete) and manages computed fields such as labels, short labels, and full-text content.</li>
-        <li>Seamless EF Core Integration: Fully compatible with existing DbContext implementations, allowing you to leverage the full power of EF Core while keeping your API layer clean and maintainable.</li>
-        <li>Type-Safe and Extensible: Supports polymorphic entities, type-safe queries, and dynamic entity activation while ensuring compile-time safety and extensibility.</li>
-      </ul>
-      <h2>💵 Business Benefits:</h2>
-      <ul>
-        <li>Reduces development time for CRUD APIs and complex data operations.</li>
-        <li>Improves maintainability by separating DTOs from database entities.</li>
-        <li>Enhances performance for web and cloud applications by optimizing queries and serialization.</li>
-        <li>Provides a robust foundation for large-scale enterprise applications with minimal custom code.</li>
-      </ul>
-      <h2>🪛 Use Cases:</h2>
-      <ul>
-        <li>Rapid REST API development for enterprise applications.</li>
-        <li>Microservices architectures requiring lightweight, serializable entities.</li>
-        <li>Complex data systems needing flexible queries and dynamic entity handling.</li>
-        <li>Applications that require consistent lifecycle management and metadata for entities.</li>
-      </ul>
-      <p><a routerLink="/how-to-basic">How to do a basic setup </a></p>
-    </div>
+    <h2>🗝️ Key Features:</h2>
+    <ul>
+      <li>DTO-First Design: Work with simple, serializable DTOs instead of complex EF Core entities, making it ideal for REST APIs, microservices, and front-end applications.</li>
+      <li>Dynamic Queries: Easily build and execute flexible queries using ChillSharp’s query objects, supporting filtering, sorting, and pagination with minimal boilerplate.</li>
+      <li>Entity Lifecycle Management: Automaes entity lifecycle events (create, update, delete) and manages computed fields such as labels, short labels, and full-text content.</li>
+      <li>Seamless EF Core Integration: Fully compatible with existing DbContext implementations, allowing you to leverage the full power of EF Core while keeping your API layer clean and maintainable.</li>
+      <li>Type-Safe and Extensible: Supports polymorphic entities, type-safe queries, and dynamic entity activation while ensuring compile-time safety and extensibility.</li>
+    </ul>
+    <h2>💵 Business Benefits:</h2>
+    <ul>
+      <li>Reduces development time for CRUD APIs and complex data operations.</li>
+      <li>Improves maintainability by separating DTOs from database entities.</li>
+      <li>Enhances performance for web and cloud applications by optimizing queries and serialization.</li>
+      <li>Provides a robust foundation for large-scale enterprise applications with minimal custom code.</li>
+    </ul>
+    <h2>🪛 Use Cases:</h2>
+    <ul>
+      <li>Rapid REST API development for enterprise applications.</li>
+      <li>Microservices architectures requiring lightweight, serializable entities.</li>
+      <li>Complex data systems needing flexible queries and dynamic entity handling.</li>
+      <li>Applications that require consistent lifecycle management and metadata for entities.</li>
+    </ul>
+    <p><a routerLink="/how-to-basic">How to do a basic setup </a></p>
 
     <h2 style="text-align: center;">😀</h2>
 
-  </div>
+  </ng-content>
   <div right>
     
   </div>
