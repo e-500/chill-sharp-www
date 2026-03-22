@@ -1,108 +1,118 @@
 <app-top-bar>
-    <div top-left class="top-bar">
-      <h2 style="white-space: nowrap;"><a routerLink="/how-to">🚀 How-to</a></h2>
-    </div>
-    <!-- <div top-center class="top-bar">
-        <img src="logo.png" style="display: inline-block;"/>
-        <h1 style="white-space: nowrap; display: inline-block;"><a routerLink="/">ChillSharp</a></h1>
-    </div> -->
-    <div top-right class="top-bar">
-      <h2 style="white-space: nowrap;"><a target="_blank" href="https://github.com/e-500/chill-sharp-light/releases">💾 Download</a></h2>
-    </div>
+  <div top-left class="top-bar top-bar-links">
+    <!-- <a routerLink="/">Serever side</a>
+    <a routerLink="/client-side/typescript">Client side</a> -->
+  </div>
+  <div top-right class="top-bar top-bar-links side-signature">
+    <p>Made in <img src="assets/it-flag.svg" /><br/> to support <br>Open Source projects</p>
+  </div>
 </app-top-bar>
+
 <app-container>
   <ng-content header class="header">
-    <img src="header.png" />
-  </ng-content>
-  <div left>
+    <section class="hero-shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Teaser</p>
+        <h1>Turn your EF Core context into a product-ready API before the boilerplate slows your ideas down!</h1>
+        <p class="lead">
+          ChillSharp sits on top of the model you already have, shortens the distance between idea and release,
+          and lets the project spend more time on product rules and less time on repetitive backend scaffolding.
+        </p>
+        <p>
+          The current documentation path is intentionally step-based: start from the minimal API setup,
+          then layer schemas, ACL-oriented delivery, authentication, permissions, and client libraries only when
+          the application is ready for them. The result is faster delivery, lighter packaging and compilation,
+          and a calmer path from prototype to serious deployment.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" routerLink="/server-side/dbcontext-to-api">Download package</a>
+          <a class="button button-secondary" routerLink="/server-side/dbcontext-to-api">Discover the server-side</a>
+          <a class="button button-secondary" routerLink="/client-side/typescript">Discover the client-side</a>
+        </div>
+      </div>
 
-  </div>
+      <div class="hero-panel">
+        <div class="advantage-card">
+          <span class="advantage-number">01</span>
+          <h2>Less boilerplate code</h2>
+          <p>Reduce the time spent on controllers, CRUD plumbing, DTO mapping, and repeated endpoint setup.</p>
+        </div>
+        <div class="advantage-card">
+          <span class="advantage-number">02</span>
+          <h2>Lighter packaging and compilation</h2>
+          <p>Keep the host compact and understandable, so building and shipping the service stays easier.</p>
+        </div>
+        <div class="advantage-card">
+          <span class="advantage-number">03</span>
+          <h2>Less time to market</h2>
+          <p>Move sooner from infrastructure work to the features, workflows, and interfaces that matter to users.</p>
+        </div>
+      </div>
+    </section>
+  </ng-content>
+
+  <div left></div>
+
   <ng-content content>
+    <!-- <p class="eyebrow">Server-side</p>
+    <nav class="step-nav" aria-label="Documentation steps">
+      <a routerLink="/server-side/dbcontext-to-api">From DbContext to API</a>
+      <a routerLink="/server-side/schemas-and-acl">Schemas and ACL</a>
+      <a routerLink="/server-side/authentication">Auth by default</a>
+      <a routerLink="/server-side/permissions">Permissions</a>
+    </nav>
+    <p class="eyebrow">Client-side</p>
+    <nav class="step-nav" aria-label="Documentation steps">
+      <a routerLink="/client-side/typescript">TypeScript</a>
+      <a routerLink="/client-side/react">React</a>
+      <a routerLink="/client-side/angular">Angular</a>
+      <a routerLink="/client-side/vue">Vue</a>
+      <a routerLink="/client-side/python">Python</a>
+    </nav> -->
+    <section>
+      <h1 style="margin-top: 2rem;">ChillSharp</h1>
+      <p>Turn an existing EF Core model into a live REST API in minutes.</p>
+      <p>ChillSharp is built for the moment when your database model already exists, your domain types already exist, and you do not want to spend days writing repetitive controllers, DTO mappers, and CRUD plumbing just to get an application online. Plug in your `DbContext`, map the API, and you are suddenly standing on a deployable backend.</p>
 
-    <h1>Simplifying Enterprise Data Management and API Development</h1>
+      <p>👉 Few lines. Real endpoints. Query, find, create, update, delete. Built-in support for authentication and schema metadata. Ready to run locally, ready to ship in a container, ready to become the data backbone of your app and the foundation for strong, consistent UIs.</p>
 
-    <p>ChillSharp is a lightweight .NET library that sits on top of Entity Framework Core and turns an existing data model into a fully working REST API with almost no setup.</p>
-    <p>Instead of writing controllers, services, and endless DTO mappings, ChillSharp exposes your entities through a clean, DTO-based API layer that supports querying, creation, updates, and deletion out of the box.</p>
-    <p>You bring the DbContext. ChillSharp does the boring parts.</p>
+      
+      <h2>Deploy-Ready In A Few Lines</h2>
+      <p>If you already have an EF Core context, this is the core setup:</p>
 
-    <h2>How to build your API server in minutes</h2>
+      <pre>
+        <code appHighlight language="csharp" fileUrl="assets/snippets/introduction.cs"></code>
+      </pre>
 
-    <pre>
-      <code 
-        appHighlight 
-        language="csharp" 
-        fileUrl="https://raw.githubusercontent.com/e-500/chill-sharp-light/refs/heads/main/ChillSharp.Examples/CodeSnippets/HomePageTeaser.cs">
-      </code>
-    </pre>
-  
-    <h2>✅ How It Works</h2>
-    <ul>
-      <li><strong>Existing DbContext</strong><br/>
-      ChillSharp uses your already-configured EF Core DbContext. No model duplication.</li>
-      <li><strong>Plug-and-Play API</strong><br/>
-      AddChillApi&lt;TContext&gt;() registers everything needed to expose your data safely and consistently.</li>
-      <li><strong>Automatic Endpoints</strong><br/>
-      MapChillApi() generates REST endpoints for querying, creating, updating, and deleting entities.</li>
-      <li><strong>DTO-First by Default</strong><br/>
-      Entities are exposed as ChillDtoEntity, giving you web-friendly JSON without leaking EF internals.</li>
-    </ul>
+    </section>
+    <section class="teaser-block" style="margin-top: 2rem;">
+      <h2>Brief introduction</h2>
+      <p>This video introduces the product’s features, outlines its structure, and explains how it works and how it can help you.</p>
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/UBYzrDzyK1k?si=gKgm0YWk-1tZN09r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="video-actions">
+        <a class="button button-secondary" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/embed/3OlnFj3PA_U?si=osIGR_WmkoFA-Vq9">Watch the Italian version</a>
+      </div>
 
-    <h2>🚀 What you get</h2>
-    <p>Within less than 10 lines, your database is instantly available through REST endpoints:</p>
-    <ul>
-      <li><strong>POST /api/chill/query</strong><br/>
-        Execute dynamic queries</li>
-      <li><strong>POST /api/chill/create</strong><br/>
-        Create a new entity</li>
-      <li><strong>POST /api/chill/update</strong><br/>
-        Update an entity</li>
-      <li><strong>POST /api/chill/delete</strong><br/>
-        Delete an entity</li>
-      <li><strong>POST /api/chill/chunk</strong><br/>
-        Executes a chunk of operations in a transaction</li>
-    </ul>
-    <p>All without writing a single controller. Just plug your DbContext and go.</p>
-
-    <h2>😎 Why ChillSharp</h2>
-    <ul>
-      <li>Minimal setup</li>
-      <li>Zero repetitive boilerplate</li>
-      <li>EF Core-friendly</li>
-      <li>DTO-based and API-ready</li>
-    </ul>
-
-    <h2>🗝️ Key Features:</h2>
-    <ul>
-      <li>DTO-First Design: Work with simple, serializable DTOs instead of complex EF Core entities, making it ideal for REST APIs, microservices, and front-end applications.</li>
-      <li>Dynamic Queries: Easily build and execute flexible queries using ChillSharp’s query objects, supporting filtering, sorting, and pagination with minimal boilerplate.</li>
-      <li>Entity Lifecycle Management: Automaes entity lifecycle events (create, update, delete) and manages computed fields such as labels, short labels, and full-text content.</li>
-      <li>Seamless EF Core Integration: Fully compatible with existing DbContext implementations, allowing you to leverage the full power of EF Core while keeping your API layer clean and maintainable.</li>
-      <li>Type-Safe and Extensible: Supports polymorphic entities, type-safe queries, and dynamic entity activation while ensuring compile-time safety and extensibility.</li>
-    </ul>
-    <h2>💵 Business Benefits:</h2>
-    <ul>
-      <li>Reduces development time for CRUD APIs and complex data operations.</li>
-      <li>Improves maintainability by separating DTOs from database entities.</li>
-      <li>Enhances performance for web and cloud applications by optimizing queries and serialization.</li>
-      <li>Provides a robust foundation for large-scale enterprise applications with minimal custom code.</li>
-    </ul>
-    <h2>🪛 Use Cases:</h2>
-    <ul>
-      <li>Rapid REST API development for enterprise applications.</li>
-      <li>Microservices architectures requiring lightweight, serializable entities.</li>
-      <li>Complex data systems needing flexible queries and dynamic entity handling.</li>
-      <li>Applications that require consistent lifecycle management and metadata for entities.</li>
-    </ul>
-    <p><a routerLink="/how-to-basic">How to do a Basic setup </a></p>
-
-    <h2 style="text-align: center;">😀</h2>
-
+      <!-- <p>
+        Instead of presenting ChillSharp as a flat wall of features, the site now follows the same adoption order
+        that a real project naturally follows. First the API must exist. Then it must expose the right schema.
+        Then it must be protected. Then permissions must remain strict without becoming exhausting. After that, the
+        developer track opens with dedicated pages for TypeScript, React, Angular, Vue, and Python.
+      </p>
+      <p>
+        That is the story this website now tells. Step 0 is deliberately warmer and more promotional than the other
+        pages. The next pages become more operational and more technical, so the visitor can move from interest to
+        implementation with less friction.
+      </p> -->
+      <div class="step-cta">
+        <a class="button button-primary" routerLink="/server-side/dbcontext-to-api">Continue to: From DbContext to API</a>
+      </div>
+    </section>
   </ng-content>
-  <div right>
-    
-  </div>
 
+  <div right></div>
 </app-container>
-<app-footer>
 
-</app-footer>
+<app-footer></app-footer>

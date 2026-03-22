@@ -15,11 +15,14 @@ export function loadHighlightJs(): Promise<HLJSApi> {
         await import('highlight.js/lib/languages/typescript');
       const { default: javascript } =
         await import('highlight.js/lib/languages/javascript');
+      const { default: python } =
+        await import('highlight.js/lib/languages/python');
 
       hljs.registerLanguage('xml', xml);
       hljs.registerLanguage('csharp', csharp);
       hljs.registerLanguage('typescript', typescript);
       hljs.registerLanguage('javascript', javascript);
+      hljs.registerLanguage('python', python);
 
       //await import('highlightjs-line-numbers.js');
 

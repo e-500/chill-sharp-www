@@ -1,0 +1,37 @@
+# Dockerfile
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+
+COPY . .
+RUN dotnet restore ChillSharp.Examples/BloggingApiService/ChillSharp.Examples.BloggingApiService.csproj
+RUN dotnet publish ChillSharp.Examples/BloggingApiService/ChillSharp.Examples.BloggingApiService.csproj -c Release -o /app/publish
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+
+ENV ASPNETCORE_URLS=http://+:8080
+ENV CHILLSHARP_DB_PATH=/data/blogging.db
+EXPOSE 8080
+
+ENTRYPOINT ["dotnet", "ChillSharp.Examples.BloggingApiService.dll"]
+
+
+# docker-compose.yml
+services:
+  chillsharp-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      CHILLSHARP_DB_PATH: /data/blogging.db
+      CHILLSHARP_ENABLE_SCHEMA: "true"
+      CHILLSHARP_ENABLE_AUTH: "true"
+      CHILLSHARP_ENABLE_I18N: "true"
+    volumes:
+      - chillsharp-data:/data
+
+volumes:
+  chillsharp-data:

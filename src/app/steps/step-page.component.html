@@ -1,0 +1,80 @@
+<app-top-bar>
+  <div top-left class="top-bar top-bar-links">
+    <!-- <a routerLink="/">Serever side</a>
+    <a routerLink="/client-side/typescript">Client side</a> -->
+  </div>
+  <div top-right class="top-bar top-bar-links side-signature">
+    <p>Made in <img src="assets/it-flag.svg" /><br/> to support <br>Open Source projects</p>
+  </div>
+</app-top-bar>
+
+<app-container>
+  <ng-content header class="header">
+    <section class="step-hero">
+      <p class="eyebrow">{{ step.eyebrow }}</p>
+      <h1>{{ step.title }}</h1>
+      <p class="lead">{{ step.intro }}</p>
+    </section>
+  </ng-content>
+
+  <div left></div>
+
+  <ng-content content>
+    <p class="eyebrow">Server-side guide</p>
+    <nav class="step-nav" aria-label="Documentation steps">
+      <a routerLink="/server-side/dbcontext-to-api">DbContext to API</a>
+      <a routerLink="/server-side/query-and-schema">Query and schema</a>
+      <a routerLink="/server-side/schema-metadata">Schema metadata</a>
+      <a routerLink="/server-side/authentication">Authentication</a>
+      <a routerLink="/server-side/permissions">Permissions</a>
+      <a routerLink="/server-side/dockerize">Dockerize</a>
+    </nav>
+    <p class="eyebrow">Client-side guide</p>
+    <nav class="step-nav" aria-label="Documentation steps">
+      <a routerLink="/client-side/typescript">TypeScript</a>
+      <a routerLink="/client-side/react">React</a>
+      <a routerLink="/client-side/angular">Angular</a>
+      <a routerLink="/client-side/vue">Vue</a>
+      <a routerLink="/client-side/python">Python</a>
+    </nav>
+
+    <section class="story-step">
+      <div class="step-grid">
+        <div class="step-copy">
+          @if (safeVideoUrl != null)
+          {
+          <div class="video-frame">
+            <iframe [src]="safeVideoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          }
+          @for (paragraph of step.paragraphs; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+
+          <ul>
+            @for (bullet of step.bullets; track bullet) {
+              <li>{{ bullet }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="step-note">
+          <h3>{{ step.sideTitle }}</h3>
+          <p>{{ step.sideText }}</p>
+        </div>
+      </div>
+
+      <pre>
+        <code appHighlight [language]="step.codeLanguage" [fileUrl]="step.codeUrl"></code>
+      </pre>
+
+      <div class="step-cta">
+        <a class="cta-link" [routerLink]="step.cta.route">{{ step.cta.label }}</a>
+      </div>
+    </section>
+  </ng-content>
+
+  <div right></div>
+</app-container>
+
+<app-footer></app-footer>
