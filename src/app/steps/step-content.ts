@@ -47,7 +47,7 @@ export const SERVER_SIDE_CONTENT: StepContent[] = [
       label: 'Continue to: query and schema',
       route: '/server-side/query-and-schema'
     },
-    videoUrl: "https://www.youtube.com/embed/UUSsri8W5Es?si=5EupAX0sybDI_AzH"
+    videoUrl: "https://www.youtube.com/embed/mvKPkKyPmKg?si=lKknH0qLygm9A3pc"
   },
   {
     id: 'query-and-schema',
@@ -75,7 +75,7 @@ export const SERVER_SIDE_CONTENT: StepContent[] = [
       label: 'Continue to: schema metadata',
       route: '/server-side/schema-metadata'
     },
-    videoUrl: "https://www.youtube.com/embed/UBYzrDzyK1k?si=gKgm0YWk-1tZN09r"
+    videoUrl: "https://www.youtube.com/embed/okoMlwt9GWM?si=bzSfzZ7Jn_sQRFsm"
   },
   {
     id: 'schema-metadata',
@@ -103,7 +103,7 @@ export const SERVER_SIDE_CONTENT: StepContent[] = [
       label: 'Continue to: Authentication',
       route: '/server-side/authentication'
     },
-    videoUrl: null
+    videoUrl: "https://www.youtube.com/embed/okoMlwt9GWM?si=bzSfzZ7Jn_sQRFsm"
   },
   {
     id: 'authentication',
@@ -131,7 +131,7 @@ export const SERVER_SIDE_CONTENT: StepContent[] = [
       label: 'Continue to: permissions without the drag',
       route: '/server-side/permissions'
     },
-    videoUrl: null
+    videoUrl: "https://www.youtube.com/embed/okoMlwt9GWM?si=bzSfzZ7Jn_sQRFsm"
   },
   {
     id: 'permissions',
@@ -159,7 +159,7 @@ export const SERVER_SIDE_CONTENT: StepContent[] = [
       label: 'Continue to: dockerize your application',
       route: '/server-side/dockerize'
     },
-    videoUrl: null
+    videoUrl: "https://www.youtube.com/embed/okoMlwt9GWM?si=bzSfzZ7Jn_sQRFsm"
   },
   {
     id: 'dockerize',
@@ -187,7 +187,7 @@ export const SERVER_SIDE_CONTENT: StepContent[] = [
       label: 'Continue on client side',
       route: '/client-side/typescript'
     },
-    videoUrl: null
+    videoUrl: "https://www.youtube.com/embed/okoMlwt9GWM?si=bzSfzZ7Jn_sQRFsm"
   }
 ];
 
