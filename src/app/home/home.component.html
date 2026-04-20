@@ -1,8 +1,10 @@
 <app-top-bar>
-  <div top-left class="top-bar top-bar-links">
-    <!-- <a routerLink="/">Serever side</a>
-    <a routerLink="/client-side/typescript">Client side</a> -->
-  </div>
+  <nav top-left class="top-bar top-bar-links" aria-label="Page sections">
+    <a href="#product">Product</a>
+    <a href="#mcp">MCP</a>
+    <a href="#setup">Setup</a>
+    <a href="#status">Status</a>
+  </nav>
   <div top-right class="top-bar top-bar-links side-signature">
     <p>Made in <img src="assets/it-flag.svg" /><br/> to support <br>Open Source projects</p>
   </div>
@@ -10,43 +12,36 @@
 
 <app-container>
   <ng-content header class="header">
-    <section class="hero-shell">
+    <section class="hero-shell" id="product">
       <div class="hero-copy">
-        <p class="eyebrow">Teaser</p>
-        <h1>Turn your EF Core context into a product-ready API before the boilerplate slows your ideas down!</h1>
+        <p class="eyebrow">DbContext to AI</p>
+        <h1>ChillSharp turns your EF Core model into an AI-ready product surface.</h1>
         <p class="lead">
-          ChillSharp sits on top of the model you already have, shortens the distance between idea and release,
-          and lets the project spend more time on product rules and less time on repetitive backend scaffolding.
-        </p>
-        <p>
-          The current documentation path is intentionally step-based: start from the minimal API setup,
-          then layer schemas, ACL-oriented delivery, authentication, permissions, and client libraries only when
-          the application is ready for them. The result is faster delivery, lighter packaging and compilation,
-          and a calmer path from prototype to serious deployment.
+          Start from the `DbContext` you already own. ChillSharp exposes a consistent REST API and an MCP server
+          that AI agents can discover, understand, query, validate, and use through explicit permissions.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" routerLink="/server-side/dbcontext-to-api">Download package</a>
-          <a class="button button-secondary" routerLink="/server-side/dbcontext-to-api">Discover the server-side</a>
-          <a class="button button-secondary" routerLink="/client-side/typescript">Discover the client-side</a>
+          <a class="button button-primary" href="#setup">See the setup</a>
+          <a class="button button-secondary" href="#mcp">Explore the AI surface</a>
         </div>
       </div>
 
-      <div class="hero-panel">
-        <div class="advantage-card">
+      <div class="hero-panel" aria-label="Core product outcomes">
+        <article class="advantage-card">
           <span class="advantage-number">01</span>
-          <h2>Less boilerplate code</h2>
-          <p>Reduce the time spent on controllers, CRUD plumbing, DTO mapping, and repeated endpoint setup.</p>
-        </div>
-        <div class="advantage-card">
+          <h2>Model-driven API</h2>
+          <p>Map `app.MapChillApi()` and expose query, lookup, find, create, update, delete, schema, and validation behavior without hand-writing repetitive controllers.</p>
+        </article>
+        <article class="advantage-card">
           <span class="advantage-number">02</span>
-          <h2>Lighter packaging and compilation</h2>
-          <p>Keep the host compact and understandable, so building and shipping the service stays easier.</p>
-        </div>
-        <div class="advantage-card">
+          <h2>AI-ready metadata</h2>
+          <p>Use Chill schemas, labels, references, and `MCPDescription` text so agents can read business meaning before they act.</p>
+        </article>
+        <article class="advantage-card">
           <span class="advantage-number">03</span>
-          <h2>Less time to market</h2>
-          <p>Move sooner from infrastructure work to the features, workflows, and interfaces that matter to users.</p>
-        </div>
+          <h2>Bounded exposure</h2>
+          <p>Publish only selected entities and queries through `EnableMCP`, then keep the endpoint behind bearer authentication and permission rules.</p>
+        </article>
       </div>
     </section>
   </ng-content>
@@ -54,63 +49,161 @@
   <div left></div>
 
   <ng-content content>
-    <!-- <p class="eyebrow">Server-side</p>
-    <nav class="step-nav" aria-label="Documentation steps">
-      <a routerLink="/server-side/dbcontext-to-api">From DbContext to API</a>
-      <a routerLink="/server-side/schemas-and-acl">Schemas and ACL</a>
-      <a routerLink="/server-side/authentication">Auth by default</a>
-      <a routerLink="/server-side/permissions">Permissions</a>
-    </nav>
-    <p class="eyebrow">Client-side</p>
-    <nav class="step-nav" aria-label="Documentation steps">
-      <a routerLink="/client-side/typescript">TypeScript</a>
-      <a routerLink="/client-side/react">React</a>
-      <a routerLink="/client-side/angular">Angular</a>
-      <a routerLink="/client-side/vue">Vue</a>
-      <a routerLink="/client-side/python">Python</a>
-    </nav> -->
-    <section>
-      <h1 style="margin-top: 2rem;">ChillSharp</h1>
-      <p>Turn an existing EF Core model into a live REST API in minutes.</p>
-      <p>ChillSharp is built for the moment when your database model already exists, your domain types already exist, and you do not want to spend days writing repetitive controllers, DTO mappers, and CRUD plumbing just to get an application online. Plug in your `DbContext`, map the API, and you are suddenly standing on a deployable backend.</p>
-
-      <p>👉 Few lines. Real endpoints. Query, find, create, update, delete. Built-in support for authentication and schema metadata. Ready to run locally, ready to ship in a container, ready to become the data backbone of your app and the foundation for strong, consistent UIs.</p>
-
-      
-      <h2>Deploy-Ready In A Few Lines</h2>
-      <p>If you already have an EF Core context, this is the core setup:</p>
-
-      <pre>
-        <code appHighlight language="csharp" fileUrl="assets/snippets/introduction.cs"></code>
-      </pre>
-
+    <section class="page-section intro-section">
+      <p class="eyebrow">What it is</p>
+      <h2>From database model to product API to agent capability</h2>
+      <p>
+        ChillSharp is for teams that already have an EF Core model and want to move faster without letting backend
+        plumbing sprawl across controllers, DTO mappers, duplicated CRUD endpoints, and one-off query contracts.
+        Your business entities and queries remain the center of the system; ChillSharp provides the runtime surface.
+      </p>
+      <p>
+        The same host can serve application clients through REST and AI clients through Model Context Protocol.
+        That makes the product useful for human-facing apps, internal tools, admin workflows, and controlled
+        agent-assisted operations over real business data.
+      </p>
     </section>
-    <section class="teaser-block" style="margin-top: 2rem;">
-      <h2>Brief introduction</h2>
-      <p>This video introduces the product’s features, outlines its structure, and explains how it works and how it can help you.</p>
-      
+
+    <section class="page-section split-section" id="mcp">
+      <div>
+        <p class="eyebrow">MCP server</p>
+        <h2>An AI can inspect the model before sending a query</h2>
+        <p>
+          ChillSharp.Mcp registers a Model Context Protocol server backed by your ChillSharp context. Agents connect
+          to `/api/chill-mcp`, list the schemas you have enabled, inspect full schema and property descriptions, and
+          then call the exact operation they need.
+        </p>
+        <p>
+          The intended flow is deliberate: discover schemas, read descriptions, choose a query or entity, validate
+          payloads when needed, then execute the operation under the authenticated user's permissions.
+        </p>
+      </div>
+      <div class="tool-grid">
+        <span>get-schema-list</span>
+        <span>get-schema</span>
+        <span>query</span>
+        <span>lookup</span>
+        <span>find</span>
+        <span>create</span>
+        <span>update</span>
+        <span>delete</span>
+        <span>autocomplete</span>
+        <span>validate</span>
+        <span>chunk</span>
+      </div>
+    </section>
+
+    <section class="page-section feature-band">
+      <article>
+        <h3>Describe the business model</h3>
+        <p>Use clear Chill type names, useful labels, and strong entity-level `MCPDescription` text so the agent knows what each object represents.</p>
+      </article>
+      <article>
+        <h3>Describe every exposed property</h3>
+        <p>Property descriptions explain meaning, allowed values, units, references, and whether a field is a status, code, lookup, or free-text value.</p>
+      </article>
+      <article>
+        <h3>Prefer focused queries</h3>
+        <p>Purpose-built query types are easier for AI to use reliably than a single broad query with many vague optional inputs.</p>
+      </article>
+      <article>
+        <h3>Keep permissions aligned</h3>
+        <p>MCP-enabled schemas, query visibility, auth permissions, and API-key limitations should describe the same intended access boundary.</p>
+      </article>
+    </section>
+
+    <section class="page-section" id="setup">
+      <p class="eyebrow">Host setup</p>
+      <h2>Add ChillSharp to an ASP.NET Core host</h2>
+      <p>
+        A ChillSharp host starts from your `DbContext`. The API registration can protect the REST and MCP surfaces,
+        while the MCP endpoint remains a separate agent transport at `/api/chill-mcp`.
+      </p>
+
+      <pre><code>using ChillSharp.Api;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext&lt;AppDbContext&gt;(options =&gt;
+    options.UseSqlite("Data Source=app.db"));
+
+builder.Services.AddChillApi&lt;AppDbContext&gt;(options =&gt;
+&#123;
+    options.ProtectedApi = true;
+&#125;);
+
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapChillApi();
+app.Run();</code></pre>
+    </section>
+
+    <section class="page-section split-section">
+      <div>
+        <p class="eyebrow">Context shape</p>
+        <h2>Prepare the DbContext for schema and AI consumption</h2>
+        <p>
+          The context inherits `DbContext`, implements ChillSharp context interfaces, and adds the Chill schema model.
+          Entities and queries opt into the AI-facing surface with `EnableMCP = true`.
+        </p>
+      </div>
+
+      <pre><code>public class AppDbContext :
+    DbContext,
+    IChillContext,
+    IChillSchemaDbContext
+&#123;
+    public string GetChillTypePrefix() =&gt; "MyCompany.Product.Data";
+    public string GetPrimaryCultureName() =&gt; "en-US";
+    public string GetSecondaryCultureName() =&gt; "it-IT";
+    public string GetCurrentUserName() =&gt; Environment.UserName;
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    &#123;
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.AddChillSchemaModel();
+    &#125;
+&#125;</code></pre>
+    </section>
+
+    <section class="page-section ai-section">
+      <p class="eyebrow">AI-assisted development</p>
+      <h2>Less generated infrastructure, more reviewable product logic</h2>
+      <p>
+        ChillSharp helps AI-assisted development by centralizing repetitive API mechanics into a model-driven runtime.
+        Instead of asking an AI tool to keep controllers, DTOs, mappers, validators, route contracts, and CRUD behavior
+        in sync, you can usually ask it to change one entity, one query, one validation rule, or one permission definition.
+      </p>
+      <p>
+        That reduces accidental interface drift, keeps endpoint behavior uniform, lowers repository context needs, and
+        makes human review focus on business rules rather than repeated plumbing.
+      </p>
+    </section>
+
+    <section class="teaser-block">
+      <p class="eyebrow">Introduction</p>
+      <h2>Brief product video</h2>
+      <p>This video introduces ChillSharp, its structure, and the way it supports faster product development.</p>
+
       <div class="video-frame">
-        <iframe src="https://www.youtube.com/embed/g5alx8r9Hfk?si=bBhP35DFxxfGSSQ3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/-I_rh7MJOyg?si=UBzAbeHzAq0FbcVq" title="ChillSharp product introduction video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
 
       <div class="video-actions">
         <a class="button button-secondary" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/embed/pa0Th2kPTmU?si=S66SwvLai36NXeSa">Watch the Italian version</a>
       </div>
+    </section>
 
-      <!-- <p>
-        Instead of presenting ChillSharp as a flat wall of features, the site now follows the same adoption order
-        that a real project naturally follows. First the API must exist. Then it must expose the right schema.
-        Then it must be protected. Then permissions must remain strict without becoming exhausting. After that, the
-        developer track opens with dedicated pages for TypeScript, React, Angular, Vue, and Python.
-      </p>
+    <section class="page-section release-note" id="status">
+      <p class="eyebrow">Release status</p>
+      <h2>ChillSharp is not yet released</h2>
       <p>
-        That is the story this website now tells. Step 0 is deliberately warmer and more promotional than the other
-        pages. The next pages become more operational and more technical, so the visitor can move from interest to
-        implementation with less friction.
-      </p> -->
-      <div class="step-cta">
-        <a class="button button-primary" routerLink="/server-side/dbcontext-to-api">Continue to: From DbContext to API</a>
-      </div>
+        The product is still in development and is not yet available as a released package. The website describes the
+        intended product direction and the documented architecture while the release is being prepared.
+      </p>
     </section>
   </ng-content>
 
