@@ -21,4 +21,4 @@ deploy-pages:
   pages:
     publish: public
   rules:
-    - if: '$CI_COMMIT_BRANCH == "old-website-2026"'
+    - if: '$CI_COMMIT_BRANCH == "main"'
