@@ -1,11 +1,11 @@
 services:
   web:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     image: chillsharp-www
     container_name: chillsharp-www
     restart: always
-    volumes:
-      - "./:/usr/share/nginx/html"
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.chillsharp-static.rule=Host(`chillsharp.dev`)"

@@ -1,10 +1,9 @@
-# Dockerfile
 FROM nginx:alpine
 
-WORKDIR /usr/src/app
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-COPY ./mime.types /etc/nginx/mime.types
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY docker/mime.types /etc/nginx/mime.types
+COPY index.html style.html modern.html old-school.html robots.txt sitemap.xml /usr/share/nginx/html/
+COPY assets /usr/share/nginx/html/assets
 
 EXPOSE 80
-
-CMD ["/bin/sh",  "-c",  "exec nginx -g 'daemon off;'"]
+CMD ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,24 @@
+stages:
+  - validate
+  - deploy
+
+validate-static-site:
+  stage: validate
+  image: node:22-alpine
+  script:
+    - node scripts/verify-static-site.mjs
+
+deploy-pages:
+  stage: deploy
+  image: node:22-alpine
+  needs:
+    - validate-static-site
+  script:
+    - node scripts/verify-static-site.mjs
+    - mkdir public
+    - cp index.html style.html modern.html old-school.html robots.txt sitemap.xml public/
+    - cp -r assets public/assets
+  pages:
+    publish: public
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "old-website-2026"'
