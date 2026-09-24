@@ -55,6 +55,7 @@ p + .button { margin-top: 2rem; }
 .case-mark { color: var(--moss); font-size: clamp(4rem, 8vw, 8rem); letter-spacing: -.08em; line-height: 1; }
 .case h3 { max-width: 17ch; font-size: clamp(1.65rem, 3vw, 3rem); }
 .case-copy > p:not(.case-kicker) { max-width: 45rem; margin: 1.25rem 0 0; }
+.case-action { margin-top: 1.75rem; }
 ul { margin: 1.3rem 0 0; padding: 0; list-style: none; font-size: .9rem; }
 li { margin: .45rem 0; padding-left: 1.25rem; position: relative; }
 li::before { content: "—"; position: absolute; left: 0; color: var(--leaf); }

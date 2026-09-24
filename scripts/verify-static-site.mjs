@@ -8,6 +8,7 @@ const requiredFiles = [
   "robots.txt",
   "sitemap.xml",
   "assets/site.css",
+  "assets/site.js",
 ];
 
 for (const file of requiredFiles) {
