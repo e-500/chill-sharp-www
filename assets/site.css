@@ -65,6 +65,9 @@ p + .button { margin-top: 2rem; }
 .client-java { --tech-color: #e76f00; }
 .client-objective-c { --tech-color: #1575f9; }
 .use-cases { padding: clamp(4.5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem); max-width: 110rem; margin: auto; background: var(--paper); }
+.client-section { padding: clamp(4.5rem, 10vw, 9rem) clamp(1.25rem, 10vw, 10rem); background: var(--paper-deep); }
+.client-section .section-intro { margin-bottom: clamp(2rem, 4vw, 3rem); }
+.client-directory { max-width: 75rem; margin: 0; }
 .section-intro { max-width: 47rem; margin-bottom: clamp(3rem, 7vw, 6rem); }
 .section-intro h2 { font-size: clamp(2.25rem, 5vw, 5.2rem); }
 .section-intro > p:not(.eyebrow) { max-width: 42rem; margin: 1.5rem 0 0; font-size: 1.08rem; }
@@ -74,12 +77,8 @@ p + .button { margin-top: 2rem; }
 .task-card-action { display: flex; flex: 1 0 auto; align-items: flex-end; justify-content: center; width: 100%; }
 .task-audiences { align-self: center; display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; margin: .75rem 0 0; }
 .task-audiences span { padding: .3rem .7rem; border: 2px solid var(--moss); border-radius: 2rem; background: color-mix(in srgb, var(--moss) 25%, transparent); color: var(--moss); font: .975rem/1.2 var(--serif); }
-.task-card .client-kicker { align-self: flex-end; font-size: .62rem; }
-.task-card .task-clients { justify-content: center; gap: .4rem; margin: 0; width: 100%; }
-.task-card .task-clients li { padding: .4rem .65rem; font-size: .75rem; }
 .task-card h3 { max-width: 18ch; font-size: clamp(1.45rem, 2vw, 2rem); }
 .task-card > p:not(.case-kicker) { margin: 1rem 0 1.75rem; font-size: .92rem; }
-.task-card > .client-kicker { margin: .75rem .2rem .2rem .2rem !important; font-size: .62rem; text-align: center; width: 100%;}
 .task-link { display: inline-flex; align-items: center; gap: .5rem; margin-top: auto; color: var(--moss); font: .75rem/1.4 var(--mono); letter-spacing: .04em; text-decoration-thickness: 1px; text-underline-offset: .3rem; text-transform: uppercase; }
 .task-link:hover { color: var(--ink); }
 .case { display: grid; grid-template-columns: 1fr 2.3fr 1fr; gap: clamp(1.5rem, 4vw, 4.5rem); padding: clamp(2rem, 4vw, 4rem) 0; border-top: 1px solid var(--line); }
